@@ -1,0 +1,58 @@
+/* Full Screen */
+.main-container {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  color: white;
+}
+
+/* Header */
+.top-bar {
+  width: 100%;
+  background: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Left Logos */
+.left-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.left-logos img {
+  height: 35px;   /* small size */
+  width: auto;
+}
+
+/* Title */
+.portal-title {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Right Section */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-section img {
+  height: 35px;
+  width: auto;
+}
+
+/* Language Buttons */
+.lang-buttons button {
+  margin-left: 5px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}

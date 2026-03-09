@@ -1,0 +1,232 @@
+/* ============================= */
+/* RESET + BASE STYLES */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, system-ui, -apple-system, sans-serif;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* ============================= */
+/* HOME LAYOUT */
+/* ============================= */
+
+.home-container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: block;
+}
+
+.home-shell {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+.header {
+  width: 100%;
+  height: 90px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.brand-logo {
+  height: 60px;
+}
+
+.portal-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.portal-title span {
+  color: #0a2a66;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.header-logo-right {
+  height: 50px;
+}
+
+/* ============================= */
+/* BUTTONS */
+/* ============================= */
+
+.btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-light {
+  background: #f3f4f6;
+  color: #1a1a1a;
+}
+
+.btn-light:hover {
+  background: #e5e7eb;
+}
+
+.btn-green {
+  background: #0a2a66;
+  color: white;
+}
+
+.btn-green:hover {
+  background: #08316f;
+}
+
+/* ============================= */
+/* LANGUAGE TOGGLE */
+/* ============================= */
+
+.lang-toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.lang-toggle {
+  width: 72px;
+  height: 32px;
+  background: #d1d5db;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.35s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.lang-toggle.active {
+  background: #0a2a66;
+}
+
+.toggle-circle {
+  width: 28px;
+  height: 28px;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #0a2a66;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  line-height: 1;
+}
+
+.lang-toggle.active .toggle-circle {
+  left: 42px;
+}
+
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
+
+.hero-section {
+  position: relative;
+  height: 450px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 42, 102, 0.75);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .portal-title {
+    font-size: 16px;
+  }
+
+  .hero-content h2 {
+    font-size: 26px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+}
