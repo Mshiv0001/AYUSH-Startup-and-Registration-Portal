@@ -7,9 +7,10 @@ import OurTeam from "./pages/OurTeam";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/" element={<Home />}>
+        <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />} />
+      </Route>
       <Route path="/our-team" element={<OurTeam />} />
     </Routes>
   );

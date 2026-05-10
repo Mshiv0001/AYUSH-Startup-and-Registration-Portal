@@ -23,6 +23,7 @@ function Login() {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [captchaAnswer, setCaptchaAnswer] = useState("");
   const [error, setError] = useState("");
   useEffect(() => {
@@ -70,19 +71,35 @@ function Login() {
           </h1>
 
           <div className="portal-controls">
-            <button
-              className="portal-lang-switch-btn"
-              onClick={() => setIsHindi(!isHindi)}
-              aria-label="Language toggle"
-            >
-              <span className={`portal-lang-pill ${isHindi ? "active" : ""}`}>
-                <span className="portal-lang-knob">{isHindi ? "हि" : "En"}</span>
-              </span>
-            </button>
-          </div>
-
-          <div className="portal-logo-box">
-            <img src="/logo3.png" alt="Partner Logo" className="portal-logo-right" />
+            <div className="header-lang-dropdown">
+              <button
+                className="header-lang-btn"
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                aria-expanded={isLangDropdownOpen}
+                aria-haspopup="true"
+              >
+                {isHindi ? "हिन्दी" : "English"}
+                <svg className={`dropdown-arrow ${isLangDropdownOpen ? 'open' : ''}`} viewBox="0 0 24 24" width="16" height="16">
+                  <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                </svg>
+              </button>
+              {isLangDropdownOpen && (
+                <div className="header-lang-menu">
+                  <button 
+                    className={`lang-option ${!isHindi ? 'selected' : ''}`} 
+                    onClick={() => { setIsHindi(false); setIsLangDropdownOpen(false); }}
+                  >
+                    English
+                  </button>
+                  <button 
+                    className={`lang-option ${isHindi ? 'selected' : ''}`} 
+                    onClick={() => { setIsHindi(true); setIsLangDropdownOpen(false); }}
+                  >
+                    हिन्दी
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </header>
 

@@ -1,11 +1,15 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const [showSplash, setShowSplash] = useState(isHome);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
   const goToSignup = () => {
     if (document.startViewTransition) {
@@ -41,36 +45,124 @@ function Home() {
     }
   }, [isHindi, i18n]);
 
+  useEffect(() => {
+    // Splash screen will now only close when user clicks 'Continue'
+  }, []);
+
+  useEffect(() => {
+    // Add loaded class to main content when splash screen fades out
+    if (!showSplash) {
+      const homeShell = document.querySelector('.home-shell');
+      if (homeShell) {
+        homeShell.classList.add('loaded');
+      }
+    }
+  }, [showSplash]);
+
   return (
     <div className="home-container">
-      <div className="home-shell">
+      {/* Splash Screen */}
+      {showSplash && isHome && (
+        <div className={`splash-screen ${!showSplash ? 'fade-out' : ''}`}>
+          <div className="splash-content">
+            <div className="splash-header-bar">
+              <div className="splash-header-logo-wrap">
+                <img src="/logo1.png" alt="AYUSH Logo" className="splash-header-logo" />
+              </div>
+              <div className="splash-header-copy">
+                <p className="splash-header-ministry">Ministry of AYUSH</p>
+                <p className="splash-header-government">Government of India</p>
+              </div>
+              <div className="splash-header-spacer" aria-hidden="true" />
+            </div>
+            <h1 className="splash-title">
+              <span>AYUSH</span> Startup Portal
+            </h1>
+            <p className="splash-subtitle">
+              Ministry of AYUSH, Government of India
+            </p>
+            <div className="splash-language-selection">
+              <button 
+                className={`splash-lang-btn ${!isHindi ? 'active' : ''}`}
+                onClick={() => {
+                  setIsHindi(false);
+                  setShowSplash(false);
+                }}
+              >
+                English
+              </button>
+              <button 
+                className={`splash-lang-btn ${isHindi ? 'active' : ''}`}
+                onClick={() => {
+                  setIsHindi(true);
+                  setShowSplash(false);
+                }}
+              >
+                हिन्दी
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className={`home-shell ${!isHome ? 'auth-mode-bg' : ''}`}>
         <header className="header">
           <div className="header-logo-box">
-            <img src="/logo1.png" alt="AYUSH Logo" className="brand-logo" />
+            <img src="/logo1.png" alt="AYUSH Logo" className="header-logo-left" />
           </div>
 
-          <h1 className="portal-title header-center-title">
-            {isHindi ? (
-              <>
-                <span>आयुष</span> स्टार्टअप पंजीकरण एवं प्रबंधन पोर्टल
-              </>
-            ) : (
-              <>
-                <span>AYUSH</span> Startup Registration &amp; Management Portal
-              </>
-            )}
-          </h1>
+          <div className="header-center-title">
+            <div className="title-with-logo">
+              <h1 className="portal-title">
+                {isHindi ? (
+                  <>
+                    <span>आयुष</span> स्टार्टअप पंजीकरण एवं प्रबंधन पोर्टल
+                  </>
+                ) : (
+                  <>
+                    <span>AYUSH</span> Startup Registration &amp; Management Portal
+                  </>
+                )}
+              </h1>
+            </div>
+            <p className="portal-subtitle">
+              {isHindi ? 
+                "Ministry of AYUSH, Government of India" : 
+                "Ministry of AYUSH, Government of India"
+              }
+            </p>
+          </div>
 
           <div className="header-controls">
-            <button
-              className="lang-switch-btn"
-              onClick={() => setIsHindi((prev) => !prev)}
-              aria-label="Language toggle"
-            >
-              <span className={`lang-pill ${isHindi ? "active" : ""}`}>
-                <span className="lang-knob">{isHindi ? "हि" : "En"}</span>
-              </span>
-            </button>
+            <div className="header-lang-dropdown">
+              <button
+                className="header-lang-btn"
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                aria-expanded={isLangDropdownOpen}
+                aria-haspopup="true"
+              >
+                {isHindi ? "हिन्दी" : "English"}
+                <svg className={`dropdown-arrow ${isLangDropdownOpen ? 'open' : ''}`} viewBox="0 0 24 24" width="16" height="16">
+                  <path fill="currentColor" d="M7 10l5 5 5-5z" />
+                </svg>
+              </button>
+              {isLangDropdownOpen && (
+                <div className="header-lang-menu">
+                  <button 
+                    className={`lang-option ${!isHindi ? 'selected' : ''}`} 
+                    onClick={() => { setIsHindi(false); setIsLangDropdownOpen(false); }}
+                  >
+                    English
+                  </button>
+                  <button 
+                    className={`lang-option ${isHindi ? 'selected' : ''}`} 
+                    onClick={() => { setIsHindi(true); setIsLangDropdownOpen(false); }}
+                  >
+                    हिन्दी
+                  </button>
+                </div>
+              )}
+            </div>
             <button className="btn btn-light header-action-btn" onClick={goToLogin}>
               {t("login")}
             </button>
@@ -80,7 +172,7 @@ function Home() {
           </div>
 
           <div className="header-logo-box">
-            <img src="/logo3.png" alt="Partner Logo" className="header-logo-right" />
+            {/* Empty right logo box */}
           </div>
         </header>
 
@@ -217,6 +309,12 @@ function Home() {
         </footer>
 
       </div>
+
+      {!isHome && (
+        <div className="auth-overlay-wrapper">
+          <Outlet />
+        </div>
+      )}
     </div>
   );
 }

@@ -11,7 +11,7 @@ const resources = {
       learnMore: "Learn More",
       heroTitle: "Empowering AYUSH Innovations",
       heroSubtitle1: "Register & Grow Your AYUSH Startup",
-      heroSubtitle2: "An initiative under <strong>Ministry of AYUSH</strong>, Government of India",
+      heroSubtitle2: "An initiative under Ministry of AYUSH, Government of India",
       quoteText: "India is a treasure trove of herbal plants; it is, in a way, our Green Gold.",
       quoteAuthor: "SHRI NARENDRA MODI",
 
@@ -35,15 +35,12 @@ const resources = {
       createAccount: "Create Account",
       alreadyRegistered: "Already Registered? Login",
       aboutTitle: "About Ministry",
-      aboutDescription:
-  "The <strong>Ministry of Ayush</strong> was formed on the 9th of November 2014 with a vision of reviving the profound knowledge of our ancient systems of medicine and ensuring the optimal development and propagation of the Ayush systems of healthcare.",
+aboutDescription:
+  "The Ministry of Ayush was formed on the 9th of November 2014 with a vision of reviving the profound knowledge of our ancient systems of medicine and ensuring the optimal development and propagation of the Ayush systems of healthcare.",
 ministerName: "Shri Prataprao Jadhav",
-      ministerDesignation:
-  "Minister of State (Independent Charge) of <strong>Ministry of Ayush</strong> and Minister of State in <strong>Ministry of Health and Family Welfare</strong>",
-      government: "Government of India",
-      infoTabTeam: "Our Team",
-      infoTabOrganizations: "Our Organisations",
-      infoTabPerformance: "Our Performance",
+ministerDesignation:
+  "Minister of State (Independent Charge) of Ministry of Ayush and Minister of State in Ministry of Health and Family Welfare",
+government: "Government of India",
 
     }
   },
@@ -56,7 +53,7 @@ ministerName: "Shri Prataprao Jadhav",
       learnMore: "और जानें",
       heroTitle: "आयुष नवाचारों को सशक्त बनाना",
       heroSubtitle1: "अपने आयुष स्टार्टअप को पंजीकृत करें और आगे बढ़ाएं",
-      heroSubtitle2: "<strong>आयुष मंत्रालय</strong>, भारत सरकार के अंतर्गत एक पहल",
+      heroSubtitle2: "आयुष मंत्रालय, भारत सरकार के अंतर्गत एक पहल",
       quoteText: "भारत जड़ी-बूटी वाले पौधों का खजाना है; यह एक तरह से हमारा हरित स्वर्ण है।",
       quoteAuthor: "श्री नरेंद्र मोदी",
 
@@ -81,14 +78,11 @@ ministerName: "Shri Prataprao Jadhav",
       alreadyRegistered: "पहले से पंजीकृत? लॉगिन",
       aboutTitle: "मंत्रालय के बारे में",
 aboutDescription:
-  "<strong>आयुष मंत्रालय</strong> की स्थापना 9 नवंबर 2014 को हमारे प्राचीन चिकित्सा प्रणालियों के गहन ज्ञान को पुनर्जीवित करने तथा आयुष स्वास्थ्य प्रणालियों के समुचित विकास और प्रसार को सुनिश्चित करने के उद्देश्य से की गई थी।",
+  "आयुष मंत्रालय की स्थापना 9 नवंबर 2014 को हमारे प्राचीन चिकित्सा प्रणालियों के गहन ज्ञान को पुनर्जीवित करने तथा आयुष स्वास्थ्य प्रणालियों के समुचित विकास और प्रसार को सुनिश्चित करने के उद्देश्य से की गई थी।",
 ministerName: "श्री प्रतापराव जाधव",
-      ministerDesignation:
-  "<strong>आयुष मंत्रालय</strong> में राज्य मंत्री (स्वतंत्र प्रभार) तथा <strong>स्वास्थ्य एवं परिवार कल्याण मंत्रालय</strong> में राज्य मंत्री",
-      government: "भारत सरकार",
-      infoTabTeam: "हमारी टीम",
-      infoTabOrganizations: "हमारे संगठन",
-      infoTabPerformance: "हमारा प्रदर्शन",
+ministerDesignation:
+  "आयुष मंत्रालय में राज्य मंत्री (स्वतंत्र प्रभार) तथा स्वास्थ्य एवं परिवार कल्याण मंत्रालय में राज्य मंत्री",
+government: "भारत सरकार",
 
 section1Title: "खंड 1 - मूल खाता जानकारी (अनिवार्य)",
 fullName: "पूरा नाम (संस्थापक / अधिकृत व्यक्ति)",

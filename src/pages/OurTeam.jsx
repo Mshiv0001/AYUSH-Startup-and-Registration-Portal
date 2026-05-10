@@ -388,41 +388,68 @@ function OurTeam() {
             <div className="who-main-photo">
               <img src="/Prataprao-Jadhav.jpeg" alt="Shri Prataprao Jadhav" />
             </div>
-            <h1>Minister of Ayush</h1>
+            <h1>Hon'ble Minister of State</h1>
+            <p>(Independent Charge)</p>
+            <p className="who-bold">Ministry of Ayush</p>
+            <h2>Shri Prataprao Jadhav</h2>
           </article>
 
           <div className="who-link-line top" />
 
           <article className="who-secretary-card orgchart-card">
-            <h3>Minister of State</h3>
-          </article>
-
-          <div className="who-link-line bottom" />
-
-          <article className="who-secretary-card orgchart-card">
             <h3>Secretary</h3>
+            <p>Vaidya Rajesh Kotecha</p>
           </article>
 
           <div className="who-link-line bottom" />
 
           <div className="who-officers-row">
             <article className="who-officer-card">
-              <h4>JS (Dr. Kavita Jain)</h4>
+              <h4>Joint Secretary</h4>
+              <p>Ms. Monalisa Dash</p>
             </article>
             <article className="who-officer-card">
-              <h4>JS (Ms. Monalisa Dash)</h4>
+              <h4>Joint Secretary</h4>
+              <p>Dr. Kavita Jain</p>
             </article>
             <article className="who-officer-card">
-              <h4>AS &amp; FA</h4>
+              <h4>AS & FA</h4>
+              <p>Sh. Hoveyda Abbas</p>
             </article>
             <article className="who-officer-card">
-              <h4>DDG (Satyajit Paul)</h4>
+              <h4>Deputy Director General</h4>
+              <p>Shri Satyajit Paul</p>
             </article>
             <article className="who-officer-card">
-              <h4>JS (Ms. Alarmelmangai D)</h4>
+              <h4>Joint Secretary</h4>
+              <p>Ms. Alarmelmangai D</p>
             </article>
           </div>
 
+          <div className="who-link-line bottom" />
+
+          <div className="who-officers-row">
+            <article className="who-officer-card">
+              <h4>Director</h4>
+              <p>Various Directors</p>
+            </article>
+            <article className="who-officer-card">
+              <h4>Deputy Secretary</h4>
+              <p>Various Deputy Secretaries</p>
+            </article>
+            <article className="who-officer-card">
+              <h4>Section Officer</h4>
+              <p>Various Section Officers</p>
+            </article>
+            <article className="who-officer-card">
+              <h4>Assistant</h4>
+              <p>Various Assistants</p>
+            </article>
+            <article className="who-officer-card">
+              <h4>Support Staff</h4>
+              <p>Administrative Support</p>
+            </article>
+          </div>
         </section>
       ) : null}
 
